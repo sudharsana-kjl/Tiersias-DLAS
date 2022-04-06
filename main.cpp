@@ -22,285 +22,10 @@ using namespace std;
 int worker_mem = 5;
 int ps_mem = 8;
 float per_worker_mem = 0.2;
-// string model = "inception model";
-// int tensors[] = [3.8,2.1,1.3,1.6,1.9,1.7,1.7,2.2,5.9,1.7,1.7,2.5,3.0,1.7,1.7,3.5,5.9,1.7,1.7,1.5,7.8];
-// vector< vector<float> > m_tensors;
-// vector<float> m1;
-// m1.push_back(1.1);
-// m1.push_back(2.3);
-// m1.push_back(2.3);
-// m1.push_back(2.3);
-// m1.push_back(4.5);
-// m1.push_back(9.0);
-// m1.push_back(9.0);
-// m1.push_back(9.0);
-// m1.push_back(9.0);
-// m1.push_back(9.0);
-// m1.push_back(9.0);
-// m1.push_back(9.0);
-// m1.push_back(392.0);
-// m1.push_back(64.0);
-// m1.push_back(15.6);
-// m_tensors.push_back(m1);
-// vector<float> m2;
-// m2.push_back(1.1);
-// m2.push_back(2.3);
-// m2.push_back(2.3);
-// m2.push_back(4.5);
-// m2.push_back(9.0);
-// m2.push_back(9.0);
-// m2.push_back(9.0);
-// m2.push_back(9.0);
-// m2.push_back(9.0);
-// m2.push_back(392.0);
-// m2.push_back(64.0);
-// m2.push_back(15.6);
-// m_tensors.push_back(m2);
-// vector<float> m3;
-// m3.push_back(1.1);
-// m3.push_back(2.3);
-// m3.push_back(4.5);
-// m3.push_back(9.0);
-// m3.push_back(9.0);
-// m3.push_back(9.0);
-// m3.push_back(392.0);
-// m3.push_back(64.0);
-// m3.push_back(15.6);
-// m_tensors.push_back(m3);
-// vector<float> m4;
-// m4.push_back(1.2);
-// m4.push_back(2.5);
-// m4.push_back(5.1);
-// m4.push_back(3.4);
-// m4.push_back(144.0);
-// m4.push_back(64.0);
-// m4.push_back(15.6);
-// m_tensors.push_back(m4);
-// vector<float> m5;
-// m5.push_back(2.0);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(2.3);
-// m5.push_back(8.0);
-// m5.push_back(2.0);
-// m5.push_back(9.0);
-// m5.push_back(4.0);
-// m5.push_back(4.0);
-// m5.push_back(9.0);
-// m5.push_back(4.0);
-// m5.push_back(4.0);
-// m5.push_back(9.0);
-// m5.push_back(4.0);
-// m5.push_back(7.8);
-// m_tensors.push_back(m5);
-// vector<float> m6;
-// m6.push_back(2.0);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(2.3);
-// m6.push_back(8.0);
-// m6.push_back(2.0);
-// m6.push_back(9.0);
-// m6.push_back(4.0);
-// m6.push_back(4.0);
-// m6.push_back(9.0);
-// m6.push_back(4.0);
-// m6.push_back(4.0);
-// m6.push_back(9.0);
-// m6.push_back(4.0);
-// m6.push_back(7.8);
-// m_tensors.push_back(m6);
-// vector<float> m7;
-// m7.push_back(2.0);
-// m7.push_back(2.3);
-// m7.push_back(2.3);
-// m7.push_back(2.3);
-// m7.push_back(2.3);
-// m7.push_back(2.3);
-// m7.push_back(2.3);
-// m7.push_back(8.0);
-// m7.push_back(2.0);
-// m7.push_back(9.0);
-// m7.push_back(4.0);
-// m7.push_back(4.0);
-// m7.push_back(9.0);
-// m7.push_back(4.0);
-// m7.push_back(4.0);
-// m7.push_back(9.0);
-// m7.push_back(4.0);
-// m7.push_back(7.8);
-// m_tensors.push_back(m7);
-// vector<float> m8;
-// m8.push_back(1.3);
-// m8.push_back(5.1);
-// m8.push_back(1.5);
-// m8.push_back(2.0);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.3);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.3);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.3);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.3);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.3);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.3);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.5);
-// m8.push_back(1.1);
-// m8.push_back(1.3);
-// m8.push_back(1.5);
-// m8.push_back(1.3);
-// m8.push_back(1.8);
-// m8.push_back(2.2);
-// m8.push_back(3.5);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(2.3);
-// m8.push_back(1.1);
-// m8.push_back(1.1);
-// m8.push_back(2.3);
-// m8.push_back(2.0);
-// m8.push_back(2.6);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(2.3);
-// m8.push_back(1.1);
-// m8.push_back(1.1);
-// m8.push_back(2.3);
-// m8.push_back(2.0);
-// m8.push_back(2.6);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(2.3);
-// m8.push_back(1.1);
-// m8.push_back(1.1);
-// m8.push_back(2.3);
-// m8.push_back(2.0);
-// m8.push_back(2.6);
-// m8.push_back(1.5);
-// m8.push_back(1.5);
-// m8.push_back(5.9);
-// m_tensors.push_back(m8);
-// vector<float> m9;
-// m9.push_back(3.8);
-// m9.push_back(2.1);
-// m9.push_back(1.3);
-// m9.push_back(1.6);
-// m9.push_back(1.9);
-// m9.push_back(1.7);
-// m9.push_back(1.7);
-// m9.push_back(2.2);
-// m9.push_back(5.9);
-// m9.push_back(1.7);
-// m9.push_back(1.7);
-// m9.push_back(2.5);
-// m9.push_back(3.0);
-// m9.push_back(1.7);
-// m9.push_back(1.7);
-// m9.push_back(3.5);
-// m9.push_back(5.9);
-// m9.push_back(1.7);
-// m9.push_back(1.7);
-// m9.push_back(1.5);m9.push_back(7.8);
-// m_tensors.push_back(m9);
-
-
-
-// string m_names[9] = {"vgg19", "vgg16", "vgg11", "alexnet", "resnet152", "resnet101", "resnet50", "inception4", "inception3"};
-// int m_mem[9] = {1, 1, 1, 1, 1, 1, 1, 1, 1};
-
-// int mem_util = 1;
-
 unordered_map<string,int> model_name_index_map;
 int job_start_queue_index = 0;
 unordered_map<int, vector<int > > start_job_dicts, end_job_dicts;
 int job_end_queue_index = 0;
-
 
 
 typedef struct Node{
@@ -441,13 +166,10 @@ typedef struct Jobs{
 			if(tmp_dict.size()==0){
 				tmp_dict["time"] = start_t;
                 tmp_dict["start_jobs"] = job_start_queue_index;
-                
-                //tmp_dict["start_jobs"].push_back(job);
                 start_job_dicts[job_start_queue_index].push_back(job["job_idx"]);
                 job_start_queue_index++; 
                 job_events.push_back(tmp_dict);
 			} else {
-				// tmp_dict["start_jobs"].push_back(job);
 				start_job_dicts[tmp_dict["start_jobs"]].push_back(job["job_idx"]);
 			}
 
@@ -639,13 +361,7 @@ void dlas(){
 	int next_job_jump = INT_MAX;
 
 	while(jobs.job_events.size() + jobs.runnable_jobs.size() > 0){
-
-		// cout<<" JE : "<<jobs.job_events.size()<<" RE : "<<jobs.runnable_jobs.size()<<endl;
-		// auto index = jobs.job_events.begin(); //DEBUG
-		// jobs.job_events.erase(index); //DEBUG
-		// cout<<"END : "<<end_events.size()<<endl;
 		if(jobs.job_events.size() + end_events.size() == 0){
-			// cout<<"Cluster not large enough \n";
 			break;
 		}
 		map<string,int> start_event,end_event,event;
@@ -661,7 +377,6 @@ void dlas(){
 
 			end_event = end_events[0];
 			end_time = end_event["time"];
-			// cout<<"END TIME HERE : "<<end_time<<endl;
 		}
 		event["time"] = INT_MAX;
 		if(end_time < start_time){
@@ -681,51 +396,18 @@ void dlas(){
 			event_time = next_job_jump;
 			event.clear();
 		}
-		//cout<<"END EVENT SIZE "<<event["end_jobs"]<<endl;
-		// cout<<"TIME : "<<event_time<<" END TIME : "<<end_time<<endl;
-		// cout<<"PRIBT EVENT "<<endl;
-		// for (auto it = event.begin(); it != event.end(); ++it) {
-  //       	cout << "{" << (*it).first << ": " << (*it).second << "}\n";
-  //   	}
-		if(event.find("end_jobs")!= event.end()){
-			for(int e_job : end_job_dicts[event["end_jobs"]]){ //FIND OUT HOW TO SOLVE JOB MAPPING ISSUE. THIS WONT WORK NOWnb
-				cluster.release_job_res(e_job);
-				// cout<<"SIZE\n";
-				// cout<<jobs.runnable_jobs.size();
-				// cout<<"HEREEEEEEEE"<<endl;
-				for(auto i=jobs.runnable_jobs.begin(); i!= jobs.runnable_jobs.end(); i++){
-					// if((*i) == jobs.job_list[e_job]["job_idx"])
-					// 	jobs.runnable_jobs.erase(i);
-				}
-				// cout<<"DONE 1"<<endl;
 
-				// cout<<"Q ID "<<e_job<<endl; 
-				// cout<<jobs.job_list[e_job]["q_id"];
-				// cout<<"BLAH"<<endl;
-				// cout<<jobs.queues.size();
-				// cout<<"mehhhh\n";
-				// cout<<jobs.queues[jobs.job_list[e_job]["q_id"]].size();
-				// cout<<"MMMMMM\n";
+		if(event.find("end_jobs")!= event.end()){
+			for(int e_job : end_job_dicts[event["end_jobs"]]){ 
+				cluster.release_job_res(e_job);
+
 				vector<int>::iterator rmval = find(jobs.queues[jobs.job_list[e_job]["q_id"]].begin(), jobs.queues[jobs.job_list[e_job]["q_id"]].end(),e_job);
 				if(rmval != jobs.queues[jobs.job_list[e_job]["q_id"]].end())
 					jobs.queues[jobs.job_list[e_job]["q_id"]].erase(rmval);
-
-				// for(auto i=jobs.queues[jobs.job_list[e_job]["q_id"]].begin(); i!= jobs.queues[jobs.job_list[e_job]["q_id"]].end(); i++){
-				// 	cout<<" i : "<<(*i)<<" ejog : "<<e_job<<endl;
-				// 	if((*i) == e_job) rmval = i;
-						
-				// }
-				// if(rmval) jobs.queues[jobs.job_list[e_job]["q_id"]].erase(rmval);
-				// cout<<"DONEEEEEE"<<endl;
-				// (jobs.runnable_jobs).erase(e_job); //WILL NOT WORK. HAVE TO PASS AN ITERATOR TO IT TO ERASE.
-				// jobs.queues[e_job["q_id"]].erase(e_job); //WILL NOT WORK
 			}
 		}
 		if(event.find("start_jobs")!= event.end()){
-			// cout<<"IN HERE\n";
-			// cout<<"S : "<<start_job_dicts[event["start_jobs"]].size()<<endl;
 			for(auto s_job : start_job_dicts[event["start_jobs"]]){
-				// cout<<"S _ JOBS "<<s_job.size();
 				jobs.move_to_runnable(s_job);
 				jobs.job_list[s_job]["q_id"]=0;
 				if(jobs.queues.size() == 0){
@@ -738,7 +420,7 @@ void dlas(){
 				cout<<"Job added : "<<jobs.job_list[s_job]["job_idx"]<<endl;
 			}
 			auto index = jobs.job_events.begin();
-			jobs.job_events.erase(index); // FIX THIS 
+			jobs.job_events.erase(index); 
 		}
 		for(auto rjob : jobs.runnable_jobs){
 			if( 5 == jobs.job_list[rjob]["status"]){ //"RUNNING" 
@@ -756,7 +438,6 @@ void dlas(){
 		        			if(rjob==(*i)["job_idx"])
 		        				jobs.queues[cur_qid].erase(i);
 			        	}
-                        //jobs.queues[cur_qid].erase(rjob);
                         cout<<"job "<<jobs.job_list[rjob]["job_idx"]<<" demote to Q "<<jobs.job_list[rjob]["q_id"]<<endl;
                     }
                 }
@@ -812,10 +493,6 @@ void dlas(){
         				queue.erase(i);
         		}
         	}
-        	
-        	// for(auto job: pending_job){
-        	// 	queue.erase(job); //NOT WORK
-        	// }
         	queue.insert(queue.end(), pending_job.begin(), pending_job.end());
         }
         end_events.clear();
@@ -824,12 +501,9 @@ void dlas(){
         for(auto rjob: jobs.runnable_jobs){
         	if(jobs.job_list[rjob]["status"] == 5){
         		int remaining_time = jobs.job_list[rjob]["duration"] - jobs.job_list[rjob]["total_executed_time"];
-        		// cout<<"RT : "<<remaining_time<<" ET : "<<event_time<<endl;
         		end_time = event_time + remaining_time;
-        		// cout<<"EEEEND TIME "<<end_time<<endl;
         		if(end_time < min_end_time){
         			tmp_end_event["time"] = end_time;
-        			//vector<unordered_map<string, int> > mm;
                     tmp_end_event["end_jobs"] = job_end_queue_index;
                     end_job_dicts[tmp_end_event["end_jobs"]].push_back(rjob);
                     job_end_queue_index++;
@@ -841,16 +515,11 @@ void dlas(){
         }
 
         if(min_end_time < INT_MAX){
-        	// cout<<"IN HERE \n";
         	end_events.push_back(tmp_end_event);
         }
 
         next_job_jump = INT_MAX;
         for(auto rjob: jobs.runnable_jobs){
-        	// cout<<"RUNNING JOB "<<rjob<<" \n";
-      //   	for (auto it = rjob.begin(); it != rjob.end(); ++it) {
-		    //     std::cout << "{" << (*it).first << ": " << (*it).second << "}\n";
-		    // }
         	if(jobs.job_list[rjob]["status"] == 5){
         		int qid = jobs.job_list[rjob]["q_id"];
         		if(qid < jobs.num_queue -1){
@@ -860,10 +529,6 @@ void dlas(){
         		}
         	}
         }
-
-
-
-
 	}
 }
 
